@@ -1,6 +1,6 @@
-# go-example
+# kaduceus
 
-A minimal Go application for [fly.io Getting Started](https://fly.io/docs/getting-started/golang/) documentation and tutorials.
+A minimal cyberpunk terminal game hosted on [fly.io](https://fly.io/docs/getting-started/golang/) that's backed by Kademlia.
 
 To get started:
 

@@ -2,10 +2,13 @@ package main
 
 import (
 	"embed"
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/fly-apps/go-example/pubsub"
 )
 
 //go:embed templates/*
@@ -19,6 +22,10 @@ func main() {
 		port = "8080"
 
 	}
+
+	pubsub := pubsub.NewPubSub()
+	fmt.Printf("pubsub.ListPeers(): %v\n", pubsub.ListPeers("general"))
+	fmt.Printf("pubsub.GetTopics(): %v\n", pubsub.GetTopics())
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		data := map[string]string{
